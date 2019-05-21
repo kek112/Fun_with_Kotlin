@@ -21,7 +21,7 @@ fun convertToDollars(money: Money): Money {
 }
 fun BigDecimal.percent(percentage: Int) = this.multiply(BigDecimal(percentage)).divide(BigDecimal(100))
 
-fun Int.percentOf(money: Money) = money.amount.multiply(BigDecimal(this).divide(BigDecimal(100)))
+infix fun Int.percentOf(money: Money) = money.amount.multiply(BigDecimal(this).divide(BigDecimal(100)))
 
 fun main() {
     val tickets = Money(BigDecimal(100),"$")
@@ -33,7 +33,7 @@ fun main() {
 
     val bd1 = BigDecimal(100)
 
-    println(7.percentOf(popcorn))
+    println(7 percentOf popcorn )
 
     println(bd1.percent(7))
 }
